@@ -12,6 +12,8 @@ GRC has recently refreshed its membership: the committee now includes developers
 
 ### Case 1 — Epoch 247: Inactive Status Mid-Epoch (Rejected)
 
+**Original definition:** Hosts who had `POC_SLOT=true` in epoch 247 before the upgrade had `confirmationWeight=0` in that epoch, leading to lowered or zeroed rewards for epoch 247.
+
 Nine participants served inferences with low miss rates (≤ 3.1%) but received zero rewards in epoch 247 after their status flipped from ACTIVE to INACTIVE during the epoch. A restitution case was filed based on the traffic they served.
 
 After investigation, validators were unable to establish a clear and reproducible causal link between the claimed mechanism and the observed reward outcomes. The victim list selection logic could not be verified against on-chain data, and similar-looking cases not included in the list raised further questions. The case was **rejected** for insufficient proof of a defined protocol-level issue.
@@ -19,6 +21,8 @@ After investigation, validators were unable to establish a clear and reproducibl
 ---
 
 ### Case 2 — Epochs 249–253: Preserver Weight Double-Scaling Bug
+
+**Original definition:** MLNodes sampled as preserver nodes in epoch 247 (and potentially the following epoch until their first PoC) had their weight incorrectly scaled to approximately 35% of the full weight.
 
 **Status: Accepted** | **30,318.50 GNK** | [Source](https://github.com/gonkalabs/GRC-e247-preserver-audit)
 
@@ -28,7 +32,9 @@ This resulted in proportionally reduced PoC rewards across multiple epochs. **34
 
 ---
 
-### Case 3 — Epochs 248, 249 & 250: Epoch Loss Compensation
+### Case 3 — Epochs 248, 249 & 250: Epoch Loss Restitution
+
+**Original definition:** Hosts invalidated with reason `consecutive_failures` in epoch N cannot participate in further epochs because the status is not reset. Only epoch N+1 should be considered for restitution to avoid abuse. Epochs 250 and beyond are out of scope as the issue became known.
 
 **Status: Accepted** | **217,612.83 GNK**
 
@@ -50,6 +56,8 @@ Several participants affected by the Case 2 double-scaling bug suffered losses g
 
 ### Case 4 — Epoch 254: API Startup Blocking Issue
 
+**Original definition:** Unexpected API startup behavior caused nodes to be unavailable during epoch 254 CPoC rounds, resulting in zero rewards for affected participants.
+
 **Status: Accepted** | **58,375.96 GNK** | [Source](https://github.com/votkon/GRC-e254-api-issue)
 
 Version v0.2.12-api-post2 was released between CPoC 1 and CPoC 2 (Confirmation Proof of Compute rounds) of epoch 254. This version introduced a blocking devshard migration on API startup, causing servers to be unavailable for up to 20 minutes after a container restart. Participants who applied the update promptly after CPoC 1 — as expected — had their API offline during CPoC 2, resulting in failed confirmations and zero rewards for the epoch despite passing CPoC 1.
@@ -64,7 +72,7 @@ The root fix (parallel devshard loading) shipped in v0.2.12-api-post3 only after
 |------|-------------|--------|--------|-----|
 | 1 | Inactive status mid-epoch | 247 | Rejected | — |
 | 2 | Preserver weight double-scaling | 249–253 | Accepted | 30,318.50 |
-| 3 | Epoch loss (broad + consecutive failures + remaining delta) | 248, 249, 250 | Accepted | 217,612.83 |
+| 3 | Epoch loss restitution (broad + consecutive failures + remaining delta) | 248, 249, 250 | Accepted | 217,612.83 |
 | 4 | API startup blocking issue | 254 | Accepted | 58,375.96 |
 | | | | **Total** | **306,307.29 GNK** |
 
