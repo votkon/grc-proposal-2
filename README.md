@@ -6,6 +6,14 @@ This is the second restitution proposal from the Gonka Restitution Committee (GR
 
 GRC has recently refreshed its membership: the committee now includes developers from **Gonka Labs** and **Inc4**, broadening technical expertise and validation capacity.
 
+**New this proposal:** before submission, GRC piloted a structured AI interview process — an idea contributed by someone who chose to remain anonymous. The interview covers purpose, cost, stakeholder impact, and risks. This is the first run, conducted for MVP purposes to test the format and prompt before rolling it out more broadly.
+
+- Interview block: https://blocks.gonka.gg/blocks/admin/gonka-governance-interview
+- This proposal's interview: https://blocks.gonka.gg/c/cmpfmwlvh007rsau9qc7sxm3u
+- Interviewer prompt: https://github.com/votkon/gonka-proposal-interview/blob/main/interviewer-prompt.txt
+
+The full transcript is available at the interview link above. We invite everyone to use this in their own proposals and share feedback on this first iteration.
+
 ---
 
 ## Cases
@@ -100,13 +108,3 @@ python3 aggregate.py
 ```
 
 The script fetches all source CSVs and JSON directly from the case repositories at runtime.
-
-## Governance Interview
-
-Before submission, the proposal went through a structured AI interview covering purpose, cost, stakeholder impact, and risks. This is the first run of the process — conducted for MVP purposes to test the format and prompt before rolling it out more broadly.
-
-- Interview block: https://blocks.gonka.gg/blocks/admin/gonka-governance-interview
-- This proposal's interview: https://blocks.gonka.gg/c/cmpfmwlvh007rsau9qc7sxm3u
-- Interviewer prompt: https://github.com/votkon/gonka-proposal-interview/blob/main/interviewer-prompt.txt
-
-The full transcript is also available in [`gonka-interviewer-chat.txt`](gonka-interviewer-chat.txt).
