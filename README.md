@@ -76,6 +76,19 @@ The root fix (parallel devshard loading) shipped in v0.2.12-api-post3 only after
 | 4 | API startup blocking issue | 254 | Accepted | 58,375.96 |
 | | | | **Total** | **306,307.29 GNK** |
 
+## Bounties
+
+Bounty rates: case investigation — 4,500 GNK | case validation — 2,187.50 GNK | proposal coordination — 4,222.20 GNK
+
+| Address | Roles | GNK |
+|---------|-------|-----|
+| `gonka14fxt7xlj74h54u5lz8epz0qeuhpka6xjhzsyq3` | Case 1 investigator | 4,500.00 |
+| `gonka16j4zv6723mrnycwn0qgw0j48dr9qecyclxg5jh` | Case 2 investigator, Case 3 validator, Case 4 validator | 8,875.00 |
+| `gonka100s7x2t0npruu9ta02306qfmaened3vg3a9dn6` | Case 3 investigator, Case 1 validator, Case 2 validator, Case 4 validator | 11,062.50 |
+| `gonka197hqnwcl30x4js3egvaujjmfknlxy7rmfw3y6k` | Case 4 investigator, Case 1 validator, Case 2 validator, Case 3 validator, proposal coordinator | 15,284.70 |
+
+---
+
 ## Aggregated Payout List
 
 The file [`restitution_aggregated.csv`](restitution_aggregated.csv) contains the consolidated payout list across all accepted cases: one row per address, amounts summed where the same address appears in multiple cases.
